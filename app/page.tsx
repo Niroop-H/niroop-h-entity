@@ -1,149 +1,143 @@
-const records = [
+const organizations = [
   {
-    name: "SAM.gov U.S. Federal Entity Record",
-    issuer: "U.S. Federal Government",
-    identifier: "P2K2F5T4FE26",
-    status: "Active Registration",
-    expires: "September 28, 2027",
-    url: "https://sam.gov/entities/view/P2K2F5T4FE26/coreData",
-  },
-  {
-    name: "NATO Commercial and Government Entity (NCAGE) Code",
-    issuer: "NATO Support and Procurement Agency (NSPA)",
-    identifier: "8066Y",
-    url: "https://eportal.nspa.nato.int/Codification/CageTool/cage-view/8066Y",
-  },
-  {
-    name: "European Commission PIC Holder",
-    issuer: "European Commission",
-    identifier: "863543956",
-  },
-  {
-    name: "Partner of Microsoft",
-    issuer: "Microsoft",
-    identifier: "7120024",
-  },
-  {
-    name: "ISC2 Candidate",
-    issuer: "ISC2",
-    identifier: "Candidate record",
-  },
-  {
-    name: "Gemini Certified Faculty",
-    issuer: "Google",
-    identifier: "Credential record",
-  },
-  {
-    name: "Gemini Certified Student",
-    issuer: "Gemini",
-    identifier: "Credential record",
-  },
-  {
-    name: "Working with Claude API",
-    issuer: "Anthropic",
-    identifier: "Credential record",
-  },
-  {
-    name: "Claude Code in Action",
-    issuer: "Anthropic",
-    identifier: "Credential record",
-  },
-];
-
-const affiliations = [
-  {
-    name: "Intel Partner",
-    url: "https://www.intel.com/content/www/us/en/partner/showcase/storefront/a5Scv0000004BhdEAE/mah-quantum.html",
-  },
-  {
-    name: "Verified Partner — IBM Partner Plus",
-  },
-  {
-    name: "Partner of Google Cloud",
-  },
-  {
-    name: "NVIDIA NCG Organization",
-  },
-  {
-    name: "FPGA & Semiconductor Corporate Authorization — Altera SSLC",
-  },
-  {
-    name: "Fabless Semiconductor Enterprise Infrastructure — ChipFoundry / SkyWater",
-  },
-  {
-    name: "Registered Overseas Supplier — UK Crown Commercial",
-  },
-  {
-    name: "EU Verified SME",
-  },
-  {
-    name: "KDEM Dhruva Cohort Programme Awardee — Top 1,111 Selection",
-  },
-];
-
-const technologyAreas = [
-  "DeepTech",
-  "Artificial Intelligence",
-  "Semiconductors",
-  "Smart Grids",
-  "Advanced Computing",
-  "Quantum Computing",
-  "Future Intelligence Systems",
-  "Research & Development",
-];
-
-const groupProperties = [
-  {
-    name: "MAH Quantum International",
+    name: "MAH Quantum",
+    role: "Founder & Chief Executive Officer",
     description:
-      "International relations, institutional engagement and international business activities.",
-  },
-  {
-    name: "Devashri S Industries",
-    description:
-      "Industrial and deep-technology activities across semiconductor and smart-grid initiatives.",
-    children: [
-      "Devashri S Semiconductors",
-      "Devashri S SmartGrids",
-    ],
-  },
-  {
-    name: "Quanta Industries",
-    description:
-      "Business operations, industry relationships and institutional partnership initiatives.",
+      "Technology and research organization working across AI, advanced computing, DeepTech and intelligent systems.",
+    accent: "Primary",
   },
   {
     name: "MAH Quantum Research Institute",
+    role: "Founder & Head of Research",
     description:
-      "Research, scholarly publishing, research collaboration and academic infrastructure.",
+      "Research-focused division working across scholarly publishing, research collaboration and academic infrastructure.",
+    accent: "Research",
   },
   {
-    name: "Queens Group",
+    name: "Devashri S Industries",
+    role: "Leadership & International Relations",
     description:
-      "Group initiative established within the MAH Quantum organizational structure in 2026.",
+      "Industrial and deep-technology activities with interests including semiconductor technologies and SmartGrids.",
+    accent: "Industry",
+  },
+  {
+    name: "Quanta Industries",
+    role: "Business Operations & Industry Relations",
+    description:
+      "Business operations, institutional relationships and industry partnership initiatives.",
+    accent: "Industry",
   },
 ];
 
-const publicProperties = [
-  ["Corporate website", "https://mahquantum.tech/"],
-  ["Research Institute", "https://research.mahquantum.tech/"],
-  ["Workspace & internships", "https://workspace.mahquantum.tech/"],
-  ["GitHub organization", "https://github.com/mahquantum"],
-  ["Hugging Face organization", "https://huggingface.co/mah-quantum"],
+const records = [
+  {
+    title: "SAM.gov U.S. Federal Entity Record",
+    issuer: "U.S. Federal Government",
+    reference: "P2K2F5T4FE26",
+    href: "https://sam.gov/",
+  },
+  {
+    title: "NATO Commercial and Government Entity",
+    issuer: "NATO Support and Procurement Agency",
+    reference: "8066Y",
+    href: "https://www.nato.int/",
+  },
+  {
+    title: "European Commission PIC Holder",
+    issuer: "European Commission",
+    reference: "863543956",
+    href: "https://ec.europa.eu/",
+  },
+  {
+    title: "Intel Partner",
+    issuer: "Intel",
+    reference: "Partner Directory",
+    href: "https://www.intel.com/content/www/us/en/partner/showcase/storefront/a5Scv0000004BhdEAE/mah-quantum.html",
+  },
+  {
+    title: "Verified Partner",
+    issuer: "IBM Partner Plus",
+    reference: "IBM Partner",
+    href: "https://www.ibm.com/partnerplus",
+  },
+  {
+    title: "Partner of Microsoft",
+    issuer: "Microsoft",
+    reference: "Partner",
+    href: "https://partner.microsoft.com/",
+  },
+  {
+    title: "Partner of Google Cloud",
+    issuer: "Google Cloud",
+    reference: "Partner",
+    href: "https://cloud.google.com/partners",
+  },
+];
+
+const education = [
+  {
+    institution: "Christ University, Bangalore",
+    qualification: "B.Tech Computer Science & Engineering",
+    detail: "Honours: Artificial Intelligence & Machine Learning",
+    period: "2025 — 2029",
+  },
+  {
+    institution: "CBSE",
+    qualification: "Senior Secondary Education",
+    detail: "Class XI — XII",
+    period: "2023 — 2025",
+  },
+  {
+    institution: "CISCE",
+    qualification: "School Education",
+    detail: "Class I — X",
+    period: "2013 — 2023",
+  },
+];
+
+const links = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/nirooph",
+  },
+  {
+    label: "MAH Quantum",
+    href: "https://mahquantum.tech/",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/mahquantum",
+  },
+  {
+    label: "Research Institute",
+    href: "https://research.mahquantum.tech/",
+  },
+  {
+    label: "Hugging Face",
+    href: "https://huggingface.co/mah-quantum",
+  },
+  {
+    label: "Workspace",
+    href: "https://workspace.mahquantum.tech/",
+  },
 ];
 
 export default function Home() {
   return (
-    <>
-      <header className="top">
-        <div className="wrap nav">
-          <a className="brand" href="#profile">
-            NIROOP H
+    <main>
+      {/* -------------------------------------------------- */}
+      {/* NAVIGATION */}
+      {/* -------------------------------------------------- */}
+
+      <header className="site-header">
+        <div className="container header-inner">
+          <a href="#top" className="brand">
+            Niroop H
           </a>
 
-          <nav className="navlinks" aria-label="Primary navigation">
-            <a href="#about">Profile</a>
-            <a href="#organization">Organization</a>
+          <nav className="main-nav" aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#organizations">Organizations</a>
             <a href="#records">Records</a>
             <a href="#education">Education</a>
             <a href="#links">Links</a>
@@ -151,610 +145,324 @@ export default function Home() {
         </div>
       </header>
 
-      <main>
+      <div id="top" />
 
-        {/* HERO / PERSON ENTITY */}
+      {/* -------------------------------------------------- */}
+      {/* HERO */}
+      {/* -------------------------------------------------- */}
 
-        <section className="hero" id="profile">
-          <div className="wrap hero-grid">
+      <section id="about" className="hero">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <div className="eyebrow">
+              <span className="eyebrow-line" />
+              Professional Profile
+            </div>
 
-            <div className="hero-copy">
-              <p className="kicker">
-                PROFESSIONAL PROFILE
-              </p>
+            <h1>
+              Niroop <span>H</span>
+            </h1>
 
-              <h1>Niroop H</h1>
-
-              <p className="role">
-                Founder &amp; Chief Executive Officer
-              </p>
-
-              <p className="company-line">
+            <div className="hero-role">
+              <strong>Founder & Chief Executive Officer</strong>
+              <a href="https://mahquantum.tech/" target="_blank">
                 MAH Quantum
-              </p>
-
-              <p className="lead">
-                Niroop H is the Founder and Chief Executive Officer
-                of MAH Quantum, based in Bengaluru, India. He oversees
-                the organization&apos;s corporate direction, technology
-                strategy, business operations and research initiatives.
-              </p>
-
-              <div className="location">
-                Bengaluru, Karnataka, India
-              </div>
+              </a>
             </div>
 
-            <div className="hero-photo-wrap">
-              <img
-                className="photo"
-                src="/niroop-h.jpeg"
-                alt="Portrait of Niroop H"
-                width="832"
-                height="1088"
-              />
-            </div>
-
-          </div>
-        </section>
-
-
-        {/* PROFILE */}
-
-        <section
-          className="section"
-          id="about"
-        >
-          <div className="wrap two-col">
-
-            <div>
-              <p className="eyebrow">
-                01
-              </p>
-
-              <h2>
-                Profile
-              </h2>
-            </div>
-
-            <div className="content">
-
-              <p>
-                Niroop H is the Founder and Chief Executive Officer
-                of MAH Quantum. His responsibilities include
-                organizational direction, technology strategy,
-                business development, research initiatives and
-                coordination across the organization&apos;s
-                operating divisions.
-              </p>
-
-              <p>
-                His professional and research activities cover
-                DeepTech, Artificial Intelligence, Semiconductors,
-                Smart Grids, Advanced Computing, Quantum Computing,
-                Future Intelligence Systems and Research &amp;
-                Development.
-              </p>
-
-            </div>
-
-          </div>
-        </section>
-
-
-        {/* TECHNOLOGY */}
-
-        <section className="section section-border">
-
-          <div className="wrap two-col">
-
-            <div>
-              <p className="eyebrow">
-                02
-              </p>
-
-              <h2>
-                Technology &amp; Research Areas
-              </h2>
-            </div>
-
-            <div className="technology-list">
-
-              {technologyAreas.map((area) => (
-                <div
-                  className="technology-item"
-                  key={area}
-                >
-                  {area}
-                </div>
-              ))}
-
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* ORGANIZATION */}
-
-        <section
-          className="section section-border"
-          id="organization"
-        >
-
-          <div className="wrap">
-
-            <p className="eyebrow">
-              03
+            <p className="hero-description">
+              Niroop H is the Founder and Chief Executive Officer of MAH
+              Quantum, based in Bengaluru, India. His work spans technology
+              strategy, intelligent systems, advanced computing, DeepTech and
+              research initiatives.
             </p>
 
-            <h2>
-              MAH Quantum
-            </h2>
-
-            <p className="section-intro">
-              MAH Quantum is the principal organization through
-              which Niroop H conducts technology, business and
-              research activities.
-            </p>
-
-
-            <div className="structure">
-
-              <div className="structure-root">
-
-                <h3>
-                  MAH Quantum
-                </h3>
-
-                <p>
-                  Principal organization
-                </p>
-
-              </div>
-
-
-              <div className="structure-grid">
-
-                {groupProperties.map((item) => (
-
-                  <article
-                    className="structure-item"
-                    key={item.name}
-                  >
-
-                    <h3>
-                      {item.name}
-                    </h3>
-
-                    <p>
-                      {item.description}
-                    </p>
-
-                    {item.children && (
-
-                      <div className="subunits">
-
-                        {item.children.map((child) => (
-
-                          <span key={child}>
-                            {child}
-                          </span>
-
-                        ))}
-
-                      </div>
-
-                    )}
-
-                  </article>
-
-                ))}
-
-              </div>
-
+            <div className="hero-location">
+              <span className="location-dot" />
+              Bengaluru, Karnataka, India
             </div>
 
-          </div>
-
-        </section>
-
-
-        {/* CURRENT POSITIONS */}
-
-        <section className="section section-border">
-
-          <div className="wrap">
-
-            <p className="eyebrow">
-              04
-            </p>
-
-            <h2>
-              Current Positions
-            </h2>
-
-
-            <div className="role-list">
-
-              <article className="role-item">
-
-                <div>
-                  <h3>
-                    MAH Quantum
-                  </h3>
-
-                  <div className="meta">
-                    Founder &amp; Chief Executive Officer ·
-                    2026–Present
-                  </div>
-                </div>
-
-                <p>
-                  Corporate direction, technology strategy,
-                  AI systems, advanced computing, research
-                  and organizational development.
-                </p>
-
-              </article>
-
-
-              <article className="role-item">
-
-                <div>
-                  <h3>
-                    MAH Quantum Research Institute
-                  </h3>
-
-                  <div className="meta">
-                    Founder &amp; Head of Research ·
-                    2026–Present
-                  </div>
-                </div>
-
-                <p>
-                  Research activities, scholarly publishing,
-                  research collaboration and academic
-                  infrastructure.
-                </p>
-
-              </article>
-
-
-              <article className="role-item">
-
-                <div>
-                  <h3>
-                    Quanta Industries
-                  </h3>
-
-                  <div className="meta">
-                    Head of Business Operations ·
-                    2026–Present
-                  </div>
-                </div>
-
-                <p>
-                  Business operations, corporate relations,
-                  partnerships and industry–academia
-                  initiatives.
-                </p>
-
-              </article>
-
-
-              <article className="role-item">
-
-                <div>
-                  <h3>
-                    Devashri S Industries
-                  </h3>
-
-                  <div className="meta">
-                    Head of Operations ·
-                    2026–Present
-                  </div>
-                </div>
-
-                <p>
-                  International relations, deep-technology
-                  initiatives, robotics and industrial
-                  development across semiconductor and
-                  smart-grid activities.
-                </p>
-
-              </article>
-
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* RECORDS */}
-
-        <section
-          className="section section-border"
-          id="records"
-        >
-
-          <div className="wrap">
-
-            <p className="eyebrow">
-              05
-            </p>
-
-            <h2>
-              Professional Records &amp; Registrations
-            </h2>
-
-            <p className="section-intro">
-              Government, institutional, professional and
-              certification records associated with this profile.
-              Organizational registrations are described as
-              organizational records rather than personal
-              certifications.
-            </p>
-
-
-            <div className="record-list">
-
-              {records.map((record) => (
-
-                <article
-                  className="record"
-                  key={record.name}
-                >
-
-                  <div>
-
-                    <h3>
-                      {record.name}
-                    </h3>
-
-                    <div className="issuer">
-                      {record.issuer}
-                    </div>
-
-                    {record.status && (
-                      <div className="record-status">
-                        {record.status}
-                      </div>
-                    )}
-
-                    {record.expires && (
-                      <div className="record-expiry">
-                        Expires {record.expires}
-                      </div>
-                    )}
-
-                  </div>
-
-
-                  <div className="record-right">
-
-                    <div className="identifier">
-                      {record.identifier}
-                    </div>
-
-                    {record.url && (
-
-                      <a
-                        className="record-link"
-                        href={record.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Official record ↗
-                      </a>
-
-                    )}
-
-                  </div>
-
-                </article>
-
-              ))}
-
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* AFFILIATIONS */}
-
-        <section className="section section-border">
-
-          <div className="wrap">
-
-            <p className="eyebrow">
-              06
-            </p>
-
-            <h2>
-              Organizational Affiliations
-            </h2>
-
-            <div className="affiliations">
-
-              {affiliations.map((item) => (
-
-                <div
-                  className="affiliation"
-                  key={item.name}
-                >
-
-                  {item.url ? (
-
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.name} ↗
-                    </a>
-
-                  ) : (
-
-                    item.name
-
-                  )}
-
-                </div>
-
-              ))}
-
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* EDUCATION */}
-
-        <section
-          className="section section-border"
-          id="education"
-        >
-
-          <div className="wrap two-col">
-
-            <div>
-
-              <p className="eyebrow">
-                07
-              </p>
-
-              <h2>
-                Education
-              </h2>
-
-            </div>
-
-
-            <div className="content">
-
-              <h3>
-                Christ University, Bengaluru
-              </h3>
-
-              <p>
-                B.Tech Computer Science &amp; Engineering
-                <br />
-                Honours — Artificial Intelligence &amp;
-                Machine Learning
-                <br />
-                2025–2029
-              </p>
-
-            </div>
-
-          </div>
-
-        </section>
-
-
-        {/* PUBLIC PROPERTIES */}
-
-        <section
-          className="section section-border"
-          id="links"
-        >
-
-          <div className="wrap two-col">
-
-            <div>
-
-              <p className="eyebrow">
-                08
-              </p>
-
-              <h2>
-                Public Properties
-              </h2>
-
-            </div>
-
-
-            <div className="links">
-
-              {publicProperties.map(([label, url]) => (
-
-                <a
-                  key={url}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {label}
-                  <span>↗</span>
-                </a>
-
-              ))}
-
-
+            <div className="hero-actions">
               <a
+                className="primary-button"
                 href="https://www.linkedin.com/in/nirooph"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noreferrer"
               >
-                LinkedIn
+                Professional Profile
                 <span>↗</span>
               </a>
 
-
-              <a
-                href="https://github.com/mahquantum"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                MAH Quantum GitHub
-                <span>↗</span>
+              <a className="text-button" href="#organizations">
+                Explore work
+                <span>↓</span>
               </a>
-
-
-              <a
-                href="https://huggingface.co/mah-quantum"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                MAH Quantum on Hugging Face
-                <span>↗</span>
-              </a>
-
             </div>
-
           </div>
 
-        </section>
+          <div className="hero-visual">
+            <div className="photo-frame">
+              <img
+                src="/niroop-h.jpeg"
+                alt="Niroop H"
+                className="profile-photo"
+              />
 
-      </main>
+              <div className="photo-caption">
+                <span>NIROOP H</span>
+                <span>FOUNDER · MAH QUANTUM</span>
+              </div>
+            </div>
 
-
-      <footer className="footer">
-
-        <div className="wrap">
-
-          <span>
-            NIROOP H
-          </span>
-
-          <span>
-            Founder &amp; CEO · MAH Quantum
-          </span>
-
-          <span>
-            Bengaluru, India
-          </span>
-
+            <div className="visual-note">
+              <span>01</span>
+              Official personal profile
+            </div>
+          </div>
         </div>
+      </section>
 
+      {/* -------------------------------------------------- */}
+      {/* INTRODUCTION */}
+      {/* -------------------------------------------------- */}
+
+      <section className="intro-section">
+        <div className="container intro-grid">
+          <div className="section-index">01 / PROFILE</div>
+
+          <div className="intro-content">
+            <p className="large-statement">
+              Building at the intersection of{" "}
+              <em>technology, research and industry.</em>
+            </p>
+
+            <p className="body-copy">
+              Niroop H leads MAH Quantum and its associated initiatives,
+              focusing on the development of intelligent systems and
+              technology-driven projects across artificial intelligence,
+              advanced computing, semiconductors and related fields.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* -------------------------------------------------- */}
+      {/* FOCUS */}
+      {/* -------------------------------------------------- */}
+
+      <section className="focus-section">
+        <div className="container">
+          <div className="focus-header">
+            <div>
+              <span className="mini-label">Areas of work</span>
+              <h2>Technology & research</h2>
+            </div>
+
+            <p>
+              A broad technical focus shaped around intelligent systems,
+              computing infrastructure and applied research.
+            </p>
+          </div>
+
+          <div className="focus-list">
+            <span>Artificial Intelligence</span>
+            <span>DeepTech</span>
+            <span>Advanced Computing</span>
+            <span>Semiconductors</span>
+            <span>Smart Grids</span>
+            <span>Research & Development</span>
+          </div>
+        </div>
+      </section>
+
+      {/* -------------------------------------------------- */}
+      {/* ORGANIZATIONS */}
+      {/* -------------------------------------------------- */}
+
+      <section id="organizations" className="section organizations-section">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <span className="section-number">02</span>
+              <span className="mini-label">Organizations</span>
+            </div>
+
+            <h2>Work & affiliations</h2>
+
+            <p>
+              Organizations and initiatives associated with Niroop H's
+              professional work.
+            </p>
+          </div>
+
+          <div className="organization-list">
+            {organizations.map((organization, index) => (
+              <article className="organization-row" key={organization.name}>
+                <div className="organization-number">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <div className="organization-main">
+                  <div className="organization-title-line">
+                    <h3>{organization.name}</h3>
+                    <span>{organization.accent}</span>
+                  </div>
+
+                  <p className="organization-role">
+                    {organization.role}
+                  </p>
+
+                  <p className="organization-description">
+                    {organization.description}
+                  </p>
+                </div>
+
+                <div className="organization-arrow">↗</div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* -------------------------------------------------- */}
+      {/* RECORDS */}
+      {/* -------------------------------------------------- */}
+
+      <section id="records" className="section records-section">
+        <div className="container">
+          <div className="section-heading records-heading">
+            <div>
+              <span className="section-number">03</span>
+              <span className="mini-label">Professional record</span>
+            </div>
+
+            <h2>Institutional references</h2>
+
+            <p>
+              Selected institutional registrations, partnerships and
+              professional records associated with the profile.
+            </p>
+          </div>
+
+          <div className="records-table">
+            {records.map((record, index) => (
+              <a
+                href={record.href}
+                target="_blank"
+                rel="noreferrer"
+                className="record-row"
+                key={record.title}
+              >
+                <div className="record-index">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <div className="record-name">
+                  <strong>{record.title}</strong>
+                  <span>{record.issuer}</span>
+                </div>
+
+                <div className="record-reference">
+                  {record.reference}
+                </div>
+
+                <div className="record-link">↗</div>
+              </a>
+            ))}
+          </div>
+
+          <p className="record-note">
+            External references open at their respective organizations or
+            public institutional websites.
+          </p>
+        </div>
+      </section>
+
+      {/* -------------------------------------------------- */}
+      {/* EDUCATION */}
+      {/* -------------------------------------------------- */}
+
+      <section id="education" className="section education-section">
+        <div className="container education-grid">
+          <div className="section-heading education-heading">
+            <div>
+              <span className="section-number">04</span>
+              <span className="mini-label">Education</span>
+            </div>
+
+            <h2>Academic background</h2>
+          </div>
+
+          <div className="education-list">
+            {education.map((item) => (
+              <article className="education-item" key={item.institution}>
+                <div className="education-period">{item.period}</div>
+
+                <div>
+                  <h3>{item.institution}</h3>
+                  <strong>{item.qualification}</strong>
+                  <p>{item.detail}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* -------------------------------------------------- */}
+      {/* LINKS */}
+      {/* -------------------------------------------------- */}
+
+      <section id="links" className="section links-section">
+        <div className="container">
+          <div className="links-top">
+            <div>
+              <span className="section-number">05</span>
+              <span className="mini-label">Online presence</span>
+            </div>
+
+            <h2>Professional links</h2>
+          </div>
+
+          <div className="links-grid">
+            {links.map((link, index) => (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="profile-link"
+                key={link.label}
+              >
+                <span>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <strong>{link.label}</strong>
+
+                <i>↗</i>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* -------------------------------------------------- */}
+      {/* FOOTER */}
+      {/* -------------------------------------------------- */}
+
+      <footer className="site-footer">
+        <div className="container footer-inner">
+          <div>
+            <div className="footer-name">Niroop H</div>
+            <p>Founder & Chief Executive Officer · MAH Quantum</p>
+          </div>
+
+          <div className="footer-right">
+            <span>Bengaluru, India</span>
+            <span>© 2026</span>
+          </div>
+        </div>
       </footer>
-    </>
+    </main>
   );
 }
