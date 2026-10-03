@@ -1,6 +1,6 @@
 const organizations = [
   {
-    name: "MAH Quantum",
+    name: "MAH Quantum™",
     role: "Founder & Chief Executive Officer",
     description:
       "Technology and research organization working across AI, advanced computing, DeepTech and intelligent systems.",
@@ -16,7 +16,7 @@ const organizations = [
     href: "https://research.mahquantum.tech/",
   },
   {
-    name: "Devashri S Industries",
+    name: "Devashri S Industries™",
     role: "Leadership & International Relations",
     description:
       "Industrial and deep-technology activities including semiconductor technologies and SmartGrid initiatives.",
