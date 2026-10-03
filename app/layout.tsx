@@ -1,70 +1,134 @@
-import type { Metadata } from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 
-const siteUrl = 'https://nirooph.mahquantum.tech';
+const siteUrl = "https://nirooph.mahquantum.tech";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Niroop H — Founder & CEO, MAH Quantum',
-  description: 'Official professional profile of Niroop H, Founder & CEO of MAH Quantum, Bengaluru, India.',
-  alternates: { canonical: '/' },
+
+  title: "Niroop H | Founder & CEO, MAH Quantum",
+
+  description:
+    "Professional profile of Niroop H, Founder and Chief Executive Officer of MAH Quantum, Bengaluru, India.",
+
+  keywords: [
+    "Niroop H",
+    "MAH Quantum",
+    "Niroop H MAH Quantum",
+    "DeepTech",
+    "Artificial Intelligence",
+    "Semiconductors",
+    "Smart Grids",
+    "Advanced Computing",
+    "Quantum Computing",
+    "Future Intelligence Systems",
+    "Research and Development",
+  ],
+
+  alternates: {
+    canonical: siteUrl,
+  },
+
   openGraph: {
-    title: 'Niroop H — Founder & CEO, MAH Quantum',
-    description: 'Official professional profile of Niroop H.',
+    title: "Niroop H | Founder & CEO, MAH Quantum",
+    description:
+      "Professional profile of Niroop H, Founder and Chief Executive Officer of MAH Quantum.",
     url: siteUrl,
-    siteName: 'Niroop H',
-    type: 'profile',
-    images: [{ url: '/niroop-h.jpeg', width: 832, height: 1088, alt: 'Niroop H' }]
+    siteName: "Niroop H",
+    type: "profile",
+    images: [
+      {
+        url: "/niroop-h.jpeg",
+        width: 832,
+        height: 1088,
+        alt: "Niroop H",
+      },
+    ],
   },
-  robots: { index: true, follow: true },
-};
 
-const person = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': `${siteUrl}/#niroop-h`,
-  name: 'Niroop H',
-  url: siteUrl,
-  image: [`${siteUrl}/niroop-h.jpeg`],
-  jobTitle: 'Founder & CEO',
-  description: 'Founder & CEO of MAH Quantum, working across AI systems, advanced computing, embedded technologies, semiconductors and research.',
-  worksFor: {
-    '@type': 'Organization',
-    '@id': 'https://mahquantum.tech/#organization',
-    name: 'MAH Quantum',
-    url: 'https://mahquantum.tech/'
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
-  sameAs: ['https://www.linkedin.com/in/nirooph']
 };
 
-const profilePage = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfilePage',
-  '@id': `${siteUrl}/#profile`,
-  url: siteUrl,
-  mainEntity: { '@id': `${siteUrl}/#niroop-h` },
-  image: `${siteUrl}/niroop-h.jpeg`
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": `${siteUrl}/#profile`,
+      url: siteUrl,
+      name: "Niroop H — Professional Profile",
+      mainEntity: {
+        "@id": `${siteUrl}/#niroop-h`,
+      },
+    },
+
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#niroop-h`,
+      name: "Niroop H",
+      description:
+        "Founder and Chief Executive Officer of MAH Quantum.",
+      image: `${siteUrl}/niroop-h.jpeg`,
+
+      jobTitle: "Founder & Chief Executive Officer",
+
+      url: siteUrl,
+
+      worksFor: {
+        "@id": "https://mahquantum.tech/#organization",
+      },
+
+      knowsAbout: [
+        "DeepTech",
+        "Artificial Intelligence",
+        "Semiconductors",
+        "Smart Grids",
+        "Advanced Computing",
+        "Quantum Computing",
+        "Future Intelligence Systems",
+        "Research & Development",
+      ],
+
+      sameAs: [
+        "https://www.linkedin.com/in/nirooph",
+      ],
+    },
+
+    {
+      "@type": "Organization",
+      "@id": "https://mahquantum.tech/#organization",
+      name: "MAH Quantum",
+      url: "https://mahquantum.tech/",
+      sameAs: [
+        "https://mahquantum.tech/",
+      ],
+    },
+  ],
 };
 
-const organization = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  '@id': 'https://mahquantum.tech/#organization',
-  name: 'MAH Quantum',
-  url: 'https://mahquantum.tech/',
-  founder: { '@id': `${siteUrl}/#niroop-h` },
-  sameAs: ['https://mahquantum.tech/']
-};
-
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/niroop-h.jpeg" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePage) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
       </head>
+
       <body>{children}</body>
     </html>
   );
