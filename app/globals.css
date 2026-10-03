@@ -180,15 +180,15 @@ img {
 
 .hero h1 {
   margin: 0;
-  font-family: "Manrope", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: clamp(64px, 7.6vw, 104px);
   line-height: 0.92;
   letter-spacing: -0.075em;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .hero h1 span {
-  color: var(--accent);
+  color: var(--text);
 }
 
 .hero-role {
