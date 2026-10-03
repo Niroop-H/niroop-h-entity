@@ -4,28 +4,28 @@ const organizations = [
     role: "Founder & Chief Executive Officer",
     description:
       "Technology and research organization working across AI, advanced computing, DeepTech and intelligent systems.",
-    accent: "Primary",
+    category: "Primary",
   },
   {
     name: "MAH Quantum Research Institute",
     role: "Founder & Head of Research",
     description:
       "Research-focused division working across scholarly publishing, research collaboration and academic infrastructure.",
-    accent: "Research",
+    category: "Research",
   },
   {
     name: "Devashri S Industries",
     role: "Leadership & International Relations",
     description:
-      "Industrial and deep-technology activities with interests including semiconductor technologies and SmartGrids.",
-    accent: "Industry",
+      "Industrial and deep-technology activities including semiconductor technologies and SmartGrid initiatives.",
+    category: "Industry",
   },
   {
     name: "Quanta Industries",
     role: "Business Operations & Industry Relations",
     description:
       "Business operations, institutional relationships and industry partnership initiatives.",
-    accent: "Industry",
+    category: "Industry",
   },
 ];
 
@@ -34,43 +34,57 @@ const records = [
     title: "SAM.gov U.S. Federal Entity Record",
     issuer: "U.S. Federal Government",
     reference: "P2K2F5T4FE26",
+    label: "GOVERNMENT RECORD",
     href: "https://sam.gov/",
+    featured: true,
   },
   {
     title: "NATO Commercial and Government Entity",
     issuer: "NATO Support and Procurement Agency",
-    reference: "8066Y",
+    reference: "NCAGE 8066Y",
+    label: "NATO RECORD",
     href: "https://www.nato.int/",
+    featured: true,
   },
   {
     title: "European Commission PIC Holder",
     issuer: "European Commission",
-    reference: "863543956",
+    reference: "PIC 863543956",
+    label: "EUROPEAN COMMISSION",
     href: "https://ec.europa.eu/",
+    featured: false,
   },
   {
     title: "Intel Partner",
     issuer: "Intel",
-    reference: "Partner Directory",
+    reference: "Intel Partner Directory",
+    label: "TECHNOLOGY PARTNER",
     href: "https://www.intel.com/content/www/us/en/partner/showcase/storefront/a5Scv0000004BhdEAE/mah-quantum.html",
+    featured: false,
   },
   {
     title: "Verified Partner",
     issuer: "IBM Partner Plus",
     reference: "IBM Partner",
+    label: "TECHNOLOGY PARTNER",
     href: "https://www.ibm.com/partnerplus",
+    featured: false,
   },
   {
     title: "Partner of Microsoft",
     issuer: "Microsoft",
-    reference: "Partner",
+    reference: "Microsoft Partner",
+    label: "TECHNOLOGY PARTNER",
     href: "https://partner.microsoft.com/",
+    featured: false,
   },
   {
     title: "Partner of Google Cloud",
     issuer: "Google Cloud",
-    reference: "Partner",
+    reference: "Google Cloud Partner",
+    label: "TECHNOLOGY PARTNER",
     href: "https://cloud.google.com/partners",
+    featured: false,
   },
 ];
 
@@ -122,21 +136,33 @@ const links = [
   },
 ];
 
+const focusAreas = [
+  "Artificial Intelligence",
+  "DeepTech",
+  "Advanced Computing",
+  "Semiconductors",
+  "Smart Grids",
+  "Research & Development",
+];
+
 export default function Home() {
+  const featuredRecords = records.filter((record) => record.featured);
+  const secondaryRecords = records.filter((record) => !record.featured);
+
   return (
-    <main>
-      {/* -------------------------------------------------- */}
-      {/* NAVIGATION */}
-      {/* -------------------------------------------------- */}
+    <main id="top">
+      {/* ================================================== */}
+      {/* HEADER */}
+      {/* ================================================== */}
 
       <header className="site-header">
         <div className="container header-inner">
           <a href="#top" className="brand">
-            Niroop H
+            NIROOP H
           </a>
 
           <nav className="main-nav" aria-label="Main navigation">
-            <a href="#about">About</a>
+            <a href="#about">Profile</a>
             <a href="#organizations">Organizations</a>
             <a href="#records">Records</a>
             <a href="#education">Education</a>
@@ -145,11 +171,9 @@ export default function Home() {
         </div>
       </header>
 
-      <div id="top" />
-
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
       {/* HERO */}
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
 
       <section id="about" className="hero">
         <div className="container hero-grid">
@@ -165,7 +189,12 @@ export default function Home() {
 
             <div className="hero-role">
               <strong>Founder & Chief Executive Officer</strong>
-              <a href="https://mahquantum.tech/" target="_blank">
+
+              <a
+                href="https://mahquantum.tech/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 MAH Quantum
               </a>
             </div>
@@ -189,7 +218,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Professional Profile
+                View professional profile
                 <span>↗</span>
               </a>
 
@@ -208,9 +237,9 @@ export default function Home() {
                 className="profile-photo"
               />
 
-              <div className="photo-caption">
+              <div className="photo-overlay">
                 <span>NIROOP H</span>
-                <span>FOUNDER · MAH QUANTUM</span>
+                <span>MAH QUANTUM</span>
               </div>
             </div>
 
@@ -222,9 +251,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -------------------------------------------------- */}
-      {/* INTRODUCTION */}
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
+      {/* PROFILE STATEMENT */}
+      {/* ================================================== */}
 
       <section className="intro-section">
         <div className="container intro-grid">
@@ -246,15 +275,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -------------------------------------------------- */}
-      {/* FOCUS */}
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
+      {/* AREAS OF WORK */}
+      {/* ================================================== */}
 
       <section className="focus-section">
         <div className="container">
           <div className="focus-header">
             <div>
               <span className="mini-label">Areas of work</span>
+
               <h2>Technology & research</h2>
             </div>
 
@@ -265,21 +295,21 @@ export default function Home() {
           </div>
 
           <div className="focus-list">
-            <span>Artificial Intelligence</span>
-            <span>DeepTech</span>
-            <span>Advanced Computing</span>
-            <span>Semiconductors</span>
-            <span>Smart Grids</span>
-            <span>Research & Development</span>
+            {focusAreas.map((area) => (
+              <span key={area}>{area}</span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
       {/* ORGANIZATIONS */}
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
 
-      <section id="organizations" className="section organizations-section">
+      <section
+        id="organizations"
+        className="section organizations-section"
+      >
         <div className="container">
           <div className="section-heading">
             <div>
@@ -290,14 +320,17 @@ export default function Home() {
             <h2>Work & affiliations</h2>
 
             <p>
-              Organizations and initiatives associated with Niroop H's
+              Organizations and initiatives associated with Niroop H&apos;s
               professional work.
             </p>
           </div>
 
           <div className="organization-list">
             {organizations.map((organization, index) => (
-              <article className="organization-row" key={organization.name}>
+              <article
+                className="organization-row"
+                key={organization.name}
+              >
                 <div className="organization-number">
                   {String(index + 1).padStart(2, "0")}
                 </div>
@@ -305,7 +338,8 @@ export default function Home() {
                 <div className="organization-main">
                   <div className="organization-title-line">
                     <h3>{organization.name}</h3>
-                    <span>{organization.accent}</span>
+
+                    <span>{organization.category}</span>
                   </div>
 
                   <p className="organization-role">
@@ -324,28 +358,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -------------------------------------------------- */}
-      {/* RECORDS */}
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
+      {/* PROFESSIONAL RECORD */}
+      {/* ================================================== */}
 
       <section id="records" className="section records-section">
         <div className="container">
           <div className="section-heading records-heading">
             <div>
               <span className="section-number">03</span>
-              <span className="mini-label">Professional record</span>
+              <span className="mini-label">
+                Professional record
+              </span>
             </div>
 
             <h2>Institutional references</h2>
 
             <p>
-              Selected institutional registrations, partnerships and
-              professional records associated with the profile.
+              Selected government, institutional and technology-partner
+              records associated with the professional profile and
+              MAH Quantum.
             </p>
           </div>
 
-          <div className="records-table">
-            {records.map((record, index) => (
+          {/* ---------------------------------------------- */}
+          {/* FEATURED RECORDS */}
+          {/* ---------------------------------------------- */}
+
+          <div className="featured-records">
+            {featuredRecords.map((record) => (
+              <a
+                href={record.href}
+                target="_blank"
+                rel="noreferrer"
+                className="featured-record"
+                key={record.title}
+              >
+                <div className="featured-record-top">
+                  <span>{record.label}</span>
+
+                  <strong>↗</strong>
+                </div>
+
+                <div className="featured-record-title">
+                  {record.title}
+                </div>
+
+                <div className="featured-record-issuer">
+                  {record.issuer}
+                </div>
+
+                <div className="featured-record-reference">
+                  {record.reference}
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* ---------------------------------------------- */}
+          {/* SECONDARY RECORDS */}
+          {/* ---------------------------------------------- */}
+
+          <div className="records-table secondary-records">
+            {secondaryRecords.map((record, index) => (
               <a
                 href={record.href}
                 target="_blank"
@@ -354,11 +429,12 @@ export default function Home() {
                 key={record.title}
               >
                 <div className="record-index">
-                  {String(index + 1).padStart(2, "0")}
+                  {String(index + 3).padStart(2, "0")}
                 </div>
 
                 <div className="record-name">
                   <strong>{record.title}</strong>
+
                   <span>{record.issuer}</span>
                 </div>
 
@@ -372,15 +448,15 @@ export default function Home() {
           </div>
 
           <p className="record-note">
-            External references open at their respective organizations or
-            public institutional websites.
+            References link to the respective public institutional or
+            partner websites.
           </p>
         </div>
       </section>
 
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
       {/* EDUCATION */}
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
 
       <section id="education" className="section education-section">
         <div className="container education-grid">
@@ -395,12 +471,19 @@ export default function Home() {
 
           <div className="education-list">
             {education.map((item) => (
-              <article className="education-item" key={item.institution}>
-                <div className="education-period">{item.period}</div>
+              <article
+                className="education-item"
+                key={item.institution}
+              >
+                <div className="education-period">
+                  {item.period}
+                </div>
 
                 <div>
                   <h3>{item.institution}</h3>
+
                   <strong>{item.qualification}</strong>
+
                   <p>{item.detail}</p>
                 </div>
               </article>
@@ -409,16 +492,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
       {/* LINKS */}
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
 
       <section id="links" className="section links-section">
         <div className="container">
           <div className="links-top">
             <div>
               <span className="section-number">05</span>
-              <span className="mini-label">Online presence</span>
+              <span className="mini-label">
+                Online presence
+              </span>
             </div>
 
             <h2>Professional links</h2>
@@ -446,15 +531,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
       {/* FOOTER */}
-      {/* -------------------------------------------------- */}
+      {/* ================================================== */}
 
       <footer className="site-footer">
         <div className="container footer-inner">
           <div>
             <div className="footer-name">Niroop H</div>
-            <p>Founder & Chief Executive Officer · MAH Quantum</p>
+
+            <p>
+              Founder & Chief Executive Officer · MAH Quantum
+            </p>
           </div>
 
           <div className="footer-right">
