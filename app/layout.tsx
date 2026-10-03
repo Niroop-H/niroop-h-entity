@@ -3,19 +3,14 @@ import "./globals.css";
 
 const siteUrl = "https://nirooph.mahquantum.tech";
 
-const imageUrl =
-  `${siteUrl}/niroop-h.jpeg`;
+const imageUrl = `${siteUrl}/niroop-h.jpeg`;
 
-const organizationUrl =
-  "https://mahquantum.tech/";
+const organizationUrl = "https://mahquantum.tech/";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
 
-  metadataBase:
-    new URL(siteUrl),
-
-  title:
-    "Niroop H | Founder & CEO, MAH Quantum",
+  title: "Niroop H | Founder & CEO, MAH Quantum",
 
   description:
     "Professional profile of Niroop H, Founder and Chief Executive Officer of MAH Quantum, Bengaluru, India.",
@@ -41,67 +36,43 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-
-    title:
-      "Niroop H | Founder & CEO, MAH Quantum",
+    title: "Niroop H | Founder & CEO, MAH Quantum",
 
     description:
       "Professional profile of Niroop H, Founder and Chief Executive Officer of MAH Quantum.",
 
-    url:
-      siteUrl,
+    url: siteUrl,
 
-    siteName:
-      "Niroop H",
+    siteName: "Niroop H",
 
-    type:
-      "profile",
+    type: "profile",
 
     images: [
       {
-        url:
-          imageUrl,
-
-        width:
-          832,
-
-        height:
-          1088,
-
-        alt:
-          "Portrait of Niroop H",
+        url: imageUrl,
+        width: 832,
+        height: 1088,
+        alt: "Portrait of Niroop H",
       },
     ],
   },
 
   robots: {
-
-    index:
-      true,
-
-    follow:
-      true,
+    index: true,
+    follow: true,
 
     googleBot: {
+      index: true,
+      follow: true,
 
-      index:
-        true,
+      "max-image-preview": "large",
 
-      follow:
-        true,
+      maxSnippet: -1,
 
-      maxImagePreview:
-        "large",
-
-      maxSnippet:
-        -1,
-
-      maxVideoPreview:
-        -1,
+      maxVideoPreview: -1,
     },
   },
 };
-
 
 /*
 |--------------------------------------------------------------------------
@@ -119,12 +90,9 @@ export const metadata: Metadata = {
 */
 
 const structuredData = {
-
-  "@context":
-    "https://schema.org",
+  "@context": "https://schema.org",
 
   "@graph": [
-
     /*
     --------------------------------------------------
     PROFILE PAGE
@@ -132,27 +100,20 @@ const structuredData = {
     */
 
     {
-      "@type":
-        "ProfilePage",
+      "@type": "ProfilePage",
 
-      "@id":
-        `${siteUrl}/#profile`,
+      "@id": `${siteUrl}/#profile`,
 
-      url:
-        siteUrl,
+      url: siteUrl,
 
-      name:
-        "Niroop H — Professional Profile",
+      name: "Niroop H — Professional Profile",
 
-      dateModified:
-        "2026-10-04",
+      dateModified: "2026-10-04",
 
       mainEntity: {
-        "@id":
-          `${siteUrl}/#niroop-h`,
+        "@id": `${siteUrl}/#niroop-h`,
       },
     },
-
 
     /*
     --------------------------------------------------
@@ -161,62 +122,42 @@ const structuredData = {
     */
 
     {
-      "@type":
-        "Person",
+      "@type": "Person",
 
-      "@id":
-        `${siteUrl}/#niroop-h`,
+      "@id": `${siteUrl}/#niroop-h`,
 
-      name:
-        "Niroop H",
+      name: "Niroop H",
 
-      alternateName:
-        "Niroop H",
+      alternateName: "Niroop H",
 
       description:
         "Founder and Chief Executive Officer of MAH Quantum.",
 
-      image:
-        imageUrl,
+      image: imageUrl,
 
-      jobTitle:
-        "Founder & Chief Executive Officer",
+      jobTitle: "Founder & Chief Executive Officer",
 
-      url:
-        siteUrl,
+      url: siteUrl,
 
       worksFor: {
-        "@id":
-          `${organizationUrl}#organization`,
+        "@id": `${organizationUrl}#organization`,
       },
 
       knowsAbout: [
-
         "DeepTech",
-
         "Artificial Intelligence",
-
         "Semiconductors",
-
         "Smart Grids",
-
         "Advanced Computing",
-
         "Quantum Computing",
-
         "Future Intelligence Systems",
-
         "Research & Development",
-
       ],
 
       sameAs: [
-
         "https://www.linkedin.com/in/nirooph",
-
       ],
     },
-
 
     /*
     --------------------------------------------------
@@ -225,83 +166,48 @@ const structuredData = {
     */
 
     {
-      "@type":
-        "Organization",
+      "@type": "Organization",
 
-      "@id":
-        `${organizationUrl}#organization`,
+      "@id": `${organizationUrl}#organization`,
 
-      name:
-        "MAH Quantum",
+      name: "MAH Quantum",
 
-      alternateName:
-        "MAH QUANTUM",
+      alternateName: "MAH QUANTUM",
 
       description:
         "Bengaluru-based technology and research organization working across advanced AI, DeepTech, semiconductor technologies, advanced computing and applied research.",
 
-      url:
-        organizationUrl,
+      url: organizationUrl,
 
       sameAs: [
-
         "https://mahquantum.tech/",
-
         "https://github.com/mahquantum",
-
         "https://huggingface.co/mah-quantum",
-
         "https://research.mahquantum.tech/",
-
         "https://workspace.mahquantum.tech/",
-
         "https://www.intel.com/content/www/us/en/partner/showcase/storefront/a5Scv0000004BhdEAE/mah-quantum.html",
-
       ],
-
     },
-
   ],
 };
 
-
 export default function RootLayout({
-
   children,
-
 }: Readonly<{
-
-  children:
-    React.ReactNode;
-
+  children: React.ReactNode;
 }>) {
-
   return (
-
     <html lang="en">
-
       <head>
-
-        <link
-          rel="canonical"
-          href={siteUrl}
-        />
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html:
-              JSON.stringify(structuredData),
+            __html: JSON.stringify(structuredData),
           }}
         />
-
       </head>
 
-      <body>
-        {children}
-      </body>
-
+      <body>{children}</body>
     </html>
-
   );
 }
