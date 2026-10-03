@@ -5,6 +5,7 @@ const organizations = [
     description:
       "Technology and research organization working across AI, advanced computing, DeepTech and intelligent systems.",
     category: "Primary",
+    href: "https://mahquantum.tech/",
   },
   {
     name: "MAH Quantum Research Institute",
@@ -12,6 +13,7 @@ const organizations = [
     description:
       "Research-focused division working across scholarly publishing, research collaboration and academic infrastructure.",
     category: "Research",
+    href: "https://research.mahquantum.tech/",
   },
   {
     name: "Devashri S Industries",
@@ -19,6 +21,7 @@ const organizations = [
     description:
       "Industrial and deep-technology activities including semiconductor technologies and SmartGrid initiatives.",
     category: "Industry",
+    href: "https://mahquantum.tech/industries",
   },
   {
     name: "Quanta Industries",
@@ -26,6 +29,7 @@ const organizations = [
     description:
       "Business operations, institutional relationships and industry partnership initiatives.",
     category: "Industry",
+    href: "https://mahquantum.tech/industries",
   },
 ];
 
@@ -35,7 +39,8 @@ const records = [
     issuer: "U.S. Federal Government",
     reference: "P2K2F5T4FE26",
     label: "GOVERNMENT RECORD",
-    href: "https://sam.gov/",
+    href:
+      "https://sam.gov/entities/view/P2K2F5T4FE26/coreData?status=Active&regId=18292847",
     featured: true,
   },
   {
@@ -43,7 +48,8 @@ const records = [
     issuer: "NATO Support and Procurement Agency",
     reference: "NCAGE 8066Y",
     label: "NATO RECORD",
-    href: "https://www.nato.int/",
+    href:
+      "https://eportal.nspa.nato.int/Codification/CageTool/cage-view/8066Y",
     featured: true,
   },
   {
@@ -59,7 +65,8 @@ const records = [
     issuer: "Intel",
     reference: "Intel Partner Directory",
     label: "TECHNOLOGY PARTNER",
-    href: "https://www.intel.com/content/www/us/en/partner/showcase/storefront/a5Scv0000004BhdEAE/mah-quantum.html",
+    href:
+      "https://www.intel.com/content/www/us/en/partner/showcase/storefront/a5Scv0000004BhdEAE/mah-quantum.html",
     featured: false,
   },
   {
@@ -327,7 +334,10 @@ export default function Home() {
 
           <div className="organization-list">
             {organizations.map((organization, index) => (
-              <article
+              <a
+                href={organization.href}
+                target="_blank"
+                rel="noreferrer"
                 className="organization-row"
                 key={organization.name}
               >
@@ -352,7 +362,7 @@ export default function Home() {
                 </div>
 
                 <div className="organization-arrow">↗</div>
-              </article>
+              </a>
             ))}
           </div>
         </div>
