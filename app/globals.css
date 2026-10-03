@@ -180,11 +180,11 @@ img {
 
 .hero h1 {
   margin: 0;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: clamp(64px, 7.6vw, 104px);
   line-height: 0.92;
   letter-spacing: -0.075em;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .hero h1 span {
@@ -884,10 +884,6 @@ img {
   color: var(--accent);
   transform: translate(2px, -2px);
 }
-
-/* ================================================== */
-/* FOOTER */
-/* ================================================== */
 
 .site-footer {
   padding: 50px 0;
