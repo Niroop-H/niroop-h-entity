@@ -70,15 +70,15 @@ const records = [
     featured: false,
   },
   {
-    title: "Verified Partner",
-    issuer: "IBM Partner Plus",
+    title: "IBM Business Partner",
+    issuer: "IBM",
     reference: "IBM Partner",
     label: "TECHNOLOGY PARTNER",
     href: "https://www.ibm.com/partnerplus",
     featured: false,
   },
   {
-    title: "Partner of Microsoft",
+    title: "Microsoft AI Cloud Partner",
     issuer: "Microsoft",
     reference: "Microsoft Partner",
     label: "TECHNOLOGY PARTNER",
@@ -100,7 +100,7 @@ const education = [
     institution: "Christ University, Bangalore",
     qualification: "B.Tech Computer Science & Engineering",
     detail: "Honours: Artificial Intelligence & Machine Learning",
-    period: "2025 — 2029",
+    period: "2025 - 2029",
   },
   {
     institution: "CBSE",
