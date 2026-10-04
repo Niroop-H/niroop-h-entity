@@ -86,7 +86,7 @@ const records = [
     featured: false,
   },
   {
-    title: "Partner of Google Cloud",
+    title: "Google Cloud Partner",
     issuer: "Google Cloud",
     reference: "Google Cloud Partner",
     label: "TECHNOLOGY PARTNER",
